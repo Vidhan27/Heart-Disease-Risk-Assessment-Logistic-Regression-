@@ -2,6 +2,7 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
+
 # Load the pre-trained heart disease model
 heart_model = pickle.load(open("heart_disease_model.sav", 'rb'))
 
@@ -19,11 +20,14 @@ if selected == 'Prediction':
     st.title("Heart Disease Risk Assessment")
 
     # Input fields for prediction
+
     age = st.text_input('Age')
     sex = st.text_input('Sex')
     cp = st.text_input('Chest Pain Types')
     trestbps = st.text_input('Resting Blood Pressure')
+
     chol = st.text_input('Serum Cholesterol in mg/dl')
+
     fbs = st.text_input('Fasting Blood Sugar > 120 mg/dl')
     restecg = st.text_input('Resting electrocardiographic results')
     thalach = st.text_input('Maximum Heart Rate Achieved')
@@ -31,6 +35,7 @@ if selected == 'Prediction':
     oldpeak = st.text_input('ST depression induced by exercise')
     slope = st.text_input('Slope of the peak exercise ST segment')
     ca = st.text_input('Major vessels colored by fluoroscopy')
+
     thal = st.text_input('thal: 0 = normal ; 1 = fixed defect ; 2 = reversible defect')
 
     heart_diagnosis = ''
@@ -89,3 +94,4 @@ elif selected == 'How To Use':
         """, 
         unsafe_allow_html=True
     )
+
